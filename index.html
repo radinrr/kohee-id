@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Landing Page</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar">
+		<h2 class="logo">Kohee.id</h2>
+		<ul class="nav-links">
+			<li><a href="#home">Beranda</a></li>
+			<li><a href="#menu">Menu</a></li>
+			<li><a href="#about">Tentang</a></li>
+			<li><a href="#contact">Kontak</a></li>
+		</ul>
+		<button class="hamburger">☰</button>
+		</nav>
+	</header>
+	
+	<section id="home" class="hero">
+		<div class="hero-content">
+			<h1>Selamat Datang!</h1>
+		</div>
+	</section>
+	
+	<section id="menu">
+		<h2>Menu Kami</h2>
+		
+		<div class="filter-buttons">
+			<button data-filter="all">All</button>
+			<button data-filter="coffee">Coffee</button>
+			<button data-filter="non-coffee">Non-Coffee</button>
+			<button data-filter="sidedish">Side Dish</button>
+		</div>
+		
+		<div class="menu-grid">
+			<div class="item coffee">
+				<img src="image/espresso.png" alt="Espresso">
+				<h3>Espresso</h3>
+				<p>Rp 20.000</p>
+			</div>
+			<div class="item coffee">
+				<img src="image/latte.png" alt="Latte">
+				<h3>Latte</h3>
+				<p>Rp 25.000</p>
+			</div>
+			<div class="item coffee">
+				<img src="image/americano.png" alt="Americano">
+				<h3>Americano</h3>
+				<p>Rp 22.000</p>
+			</div>
+			<div class="item non-coffee">
+				<img src="image/matcha.png" alt="Matcha">
+				<h3>Matcha</h3>
+				<p>Rp 28.000</p>
+			</div>
+			<div class="item sidedish">
+				<img src="image/cc1.png" alt="Red Velvet Cake">
+				<h3>Red Velvet Cake</h3>
+				<p>Rp 15.000</p>
+			</div>
+			<div class="item sidedish">
+				<img src="image/cc2.png" alt="Blueberry Cake">
+				<h3>Blueberry Cake</h3>
+				<p>Rp 15.000</p>
+			</div>
+			<div class="item sidedish">
+				<img src="image/ck1.png" alt="Chocolate Cake">
+				<h3>Chocolate Cake</h3>
+				<p>Rp 15.000</p>
+			</div>
+			<div class="item sidedish">
+				<img src="image/cr1.png" alt="Croissant">
+				<h3>Croissant</h3>
+				<p>Rp 15.000</p>
+			</div>
+		</div>
+	</section>
+	
+	<section id="order">
+		<h2>Pesan Sekarang!</h2>
+		<form id="orderForm" class="order-form">
+			<div class="form-group">
+				<label for="namaPemesan">Nama</label>
+				<input type="text" id="namaPemesan" name="namaPemesan" placeholder="Masukkan Nama Anda" required>
+			</div>
+			
+			<div class="form-group">
+				<label for="menuPilihan">Pilih Menu</label>
+				<select id="menuPilihan" name="menuPilihan" required>
+					<option value="Pilih Menu</label>
+					<option value="espresso">Espresso - Rp 20.000</option>
+					<option value="latte">Latte - Rp 25.000</option>
+					<option value="americano">Americano - Rp 22.000</option>
+					<option value="matcha">Matcha - Rp 28.000</option>
+					<option value="redvelvet">Red Velvet Cake - Rp 15.000</option>
+					<option value="blueberry">Blueberry Cake - Rp 15.000</option>
+					<option value="chocolate">Chocolate Cake - Rp 15.000</option>
+					<option value="croissant">Croissant - Rp 15.000</option>
+				</select>
+			</div>
+			
+			<div class="form-group">
+				<label>Jenis Penyajian</label>
+				<div class="serve-options">
+					<label><input type="radio" name="serve" value="hot" required> Hot</label>
+					<label><input type="radio" name="serve" value="iced" required> Iced</label>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="jumlah">Jumlah</label>
+				<input type="number" id="jumlah" name="jumlah" min="1" value="1" required>
+			</div>
+			
+			<div class="form-group">
+				<label for="alamat"> Alamat Tujuan</label>
+				<textarea id="alamat" name="alamat" rows="3" placeholder="Masukkan alamat pengiriman" required></textarea>
+			</div>
+			
+			<div class="form-group">
+				<label for="telepon"> Nomor Telepon</label>
+				<input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" pattern="[0-9]{10,13}" required>
+			</div>
+			
+			<div class="form-group">
+			<label>Metode Pembayaran</label>
+				<div class="payment-options">
+					<label><input type="radio" name="pembayaran" value="Tunai" required>Tunai</label>
+					<label><input type="radio" name="pembayaran" value="QRIS" required>QRIS</label>
+				</div>
+			</div>
+			
+			<div id="qrisCode" class="qris-box" style="display:none;">
+				<p>Scan QR Code berikut untuk pembaryaran:</p>
+				<img src="" alt="QRIS Payment" />
+			</div>
+			
+			<button type="submit" class="order-btn">Kirim</button>
+		</form>
+	</section>
+	
+	<section id="about">
+		<h2>Tentang Kami</h2>
+		<p>
+			Di <strong>Kohee.id</strong>, kami percaya bahwa secangkir kopi bukan hanya minuman, melainkan pengalaman. Sejak awal berdiri, kami berkomitmen menghadirkan suasana hangat dan ramah bagi siapa pun yang datang, baik untuk bekerja, bersantai, maupun sekadar menikmati waktu bersama orang terdekat.
+		</p>
+		<p>
+			Kami memilih biji kopi terbaik dari Nusantara, bekerja sama langsung dengan petani lokal untuk memastikan kualitas dan keberlanjutan. Setiap biji diproses dengan penuh perhatian, lalu diracik oleh barista kami menggunakan teknik modern agar menghasilkan rasa yang autentik sekaligus inovatif. Dari espresso klasik hingga kreasi signature khas Kohee.Id, setiap tegukan adalah perpaduan antara tradisi dan kreativitas.
+		</p>
+		<p>
+			Kami memilih biji kopi terbaik dari Nusantara, bekerja sama langsung dengan petani lokal untuk memastikan kualitas dan keberlanjutan. Setiap biji diproses dengan penuh perhatian, lalu diracik oleh barista kami menggunakan teknik modern agar menghasilkan rasa yang autentik sekaligus inovatif. Dari espresso klasik hingga kreasi signature khas Kohee.Id, setiap tegukan adalah perpaduan antara tradisi dan kreativitas.
+		</p>
+	</section>
+	
+	<footer id="contact">
+		<p>Hubungi kami: kohee.id@official.com</p>
+		<button id="openModal">Kritik & Saran</button>
+		<button id="backToTop">↑ Kembali ke atas</button>
+		<button id="openMap">Lihat Lokasi</button>
+		<p>© 2026 Kohee.id
+	</footer>
+	
+	<div id="modal" class="modal">
+		<div class="modal-content">
+			<button id="closeMap" class="close" aria-label="Tutup modal">&times;</button>
+			<h2>Kritik & Saran</h2>
+			<form id="form">
+				<input type="text" id="nama" placeholder="Nama">
+				<input type="email" id="email" placeholder="Email">
+				<textarea id="pesan" placeholder="Tulis kritik atau saranmu" rows="4"></textarea>
+				<button type="submit">Kirim</button>
+			</form>
+		</div>
+	</div>
+	
+	<div id="mapModal" class="modal">
+		<div class="modal-content">
+			<button class="close" aria-label="Tutup modal">&times;</button>
+			<h2>Lokasi Toko</h2>
+			<iframe 
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7673.313858781817!2d111.0961589688402!3d-8.194743375214655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7961dc85d1837b%3A0x3f19b40003c8424!2sAlun-Alun%20Pacitan!5e0!3m2!1sid!2sid!4v1785899622610!5m2!1sid!2sid"  style="border:0;" 
+				width="100%" height="300px"
+				style="border:0;"
+				allowfullscreen="" 
+				loading="lazy" 
+				referrerpolicy="strict-origin-when-cross-origin">
+			</iframe>	
+		</div>
+	</div>
+	
+	<div id="notifModal" class="modal">
+		<div class="modal-content">
+			<button class="close" aria-label="Tutup modal">&times;</button>
+			<h2 id="notifTitle"></h2>
+			<p id="notifMessage"></p>
+		</div>
+	</div>
+	
+	<script src="script.js"></script>
+</body>
+</html>
+				
+				
+	
+			
+			
+	
